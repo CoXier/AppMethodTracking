@@ -10,6 +10,7 @@ import org.gradle.api.Project
 class MethodPlugin implements Plugin<Project>{
     @Override
     void apply(Project project) {
+        project.extensions.create('methodTracking',TrackExtension)
         project.task('track',type:MethodTrackingTask)
     }
 }
