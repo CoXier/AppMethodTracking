@@ -83,7 +83,7 @@ After above steps,`traceName.html` is created.
 
 Its output like this:
 
-<img src="/screenshots/s_0.png"/>
+<img src="/screenshot/s_0.png"/>
 
 The digit is `useces`.
 
