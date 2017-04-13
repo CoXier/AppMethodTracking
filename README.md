@@ -90,7 +90,7 @@ The digit is `useces`.
 
 In html,I add click event that means you can toggle these elements that have children.For example if I click `com.hackerli.sample.MainActivity.putOnShoes` above line,I will get:
 
-<img src="/screenshots/s_1.png"/>
+<img src="/screenshot/s_1.png"/>
 
 
 # LICENSE
