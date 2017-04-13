@@ -6,5 +6,8 @@ package com.uniquestudio
  */
 class TrackExtension {
     def traceName
+    /**
+     * filter method by package name
+     */
     def filterList
 }

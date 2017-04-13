@@ -70,11 +70,11 @@ class MethodTrackingTask extends DefaultTask{
         while(i<traceList.length){
             def info = Utils.parse(traceList[i])
             filterList.each{
-                if(info.get(2).contains(it)){
+                if(info.get(2) == it){
                     MethodInfo methodInfo = new MethodInfo()
                     methodInfo.action = info.get(0)
                     methodInfo.usecs = info.get(1)
-                    methodInfo.methodSignature = info.get(2)
+                    methodInfo.methodSignature = info.get(3)
                     filteredMethod.add(methodInfo)
                     // break
                     return true
@@ -84,6 +84,9 @@ class MethodTrackingTask extends DefaultTask{
         }
 
         filteredMethod.each {println(it)}
+
+
+
         println '\nFINISHED'
     }
 

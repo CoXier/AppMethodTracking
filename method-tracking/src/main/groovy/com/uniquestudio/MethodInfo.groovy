@@ -5,6 +5,7 @@ package com.uniquestudio
  */
 class MethodInfo {
     String methodSignature
+    String packageName
     String usecs
     // ent or xit
     String action

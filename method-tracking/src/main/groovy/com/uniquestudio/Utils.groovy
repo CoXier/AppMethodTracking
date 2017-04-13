@@ -6,7 +6,7 @@ class Utils {
     /**
      *
      * @param s
-     * @return List format is  ["ext/ent","usecs","methodSignature"]
+     * @return List format is  [ext/ent,usecs,packageName,methodSignature]
      */
     static def parse(String s) {
         def result = []
@@ -53,14 +53,21 @@ class Utils {
             }
         }
 
+        int count = 0
         for(int i=start;i<s.length();i++){
             char c = s.charAt(i)
             if (c == (' ' as char)){
                 end = i
                 result.add(s.substring(start,end))
+            }else if(c == ('.' as char)){
+                count++
+                if(count == 3){
+                    result.add(s.substring(start,i))
+                }
             }
         }
 
         return result
     }
+
 }
