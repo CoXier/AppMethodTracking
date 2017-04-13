@@ -73,7 +73,7 @@ methodTracking{
 }
 ```
 * `traceName` is from the method `Debug.startMethodTracing(traceName)`
-* filterList is used to filter some extra methods.We usually use package name.
+* `filterList` is used to filter some extra methods.We usually use package name.
 
 ## Step4
 ```groovy
