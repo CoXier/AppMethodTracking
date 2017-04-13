@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script langugage="javascript">
+function toggle(e,item) {
+  obj = document.getElementById(item);
+  childs = obj.children;
+  for (var i = 0; i < childs.length; i++) {
+    if(childs[i].style.display == "none"){
+      childs[i].style.display = "block";
+    }else{
+      childs[i].style.display = "none";
+    }
+  }
+  e.stopPropagation();
+}
+</script>
+<style type="text/css">
+ul li {
+  font-family: courier; font-size: 13;
+  margin-top: 8px;
+}
+</style>
+<body>
+<ul><li id="0" onClick="toggle(event,'0')" >com.hackerli.sample.MainActivity.wearCloth#61<ul><li id="0#0" onClick="toggle(event,'0#0')" >com.hackerli.sample.MainActivity.putOnCoat#6<ul></ul></li><li id="0#1" onClick="toggle(event,'0#1')" >com.hackerli.sample.MainActivity.putOnPants#4<ul></ul></li><li id="0#2" onClick="toggle(event,'0#2')" >com.hackerli.sample.MainActivity.putOnShoes#22<ul><li id="0#2#0" onClick="toggle(event,'0#2#0')" >com.hackerli.sample.MainActivity.putOnSocks#14<ul><li id="0#2#0#0" onClick="toggle(event,'0#2#0#0')" >com.hackerli.sample.MainActivity.putOnHat#4<ul></ul></li></ul></li></ul></li><li id="0#3" onClick="toggle(event,'0#3')" >com.hackerli.sample.MainActivity.putOnHat#3<ul></ul></li></ul></li></ul></body></html>
