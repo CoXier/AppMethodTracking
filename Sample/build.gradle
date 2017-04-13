@@ -3,7 +3,7 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url uri('/home/coxier/AppMethodTrack/method-tracking/repo') }
+        maven { url uri('/home/coxier/AppMethodTracking/method-tracking/repo') }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.2'
