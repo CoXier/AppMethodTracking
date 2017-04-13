@@ -34,8 +34,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public void wearCloth() {
+        putOnCoat();
+        putOnPants();
         putOnShoes();
         putOnHat();
+    }
+
+    private void putOnPants() {
+
+    }
+
+    private void putOnCoat() {
+
     }
 
     private void putOnHat() {
