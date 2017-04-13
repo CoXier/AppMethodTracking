@@ -1,5 +1,6 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
+apply plugin: 'com.gradle.plugin-publish'
 
 group 'com.uniquestudio'
 version '1.0'
@@ -19,5 +20,31 @@ uploadArchives {
         mavenDeployer {
             repository(url: uri('repo'))
         }
+    }
+}
+
+pluginBundle {
+    website = 'https://github.com/CoXier/AppMethodTracking'
+    vcsUrl = 'https://github.com/CoXier/AppMethodTracking'
+    description = 'A gradle plugin tracking android application method'
+    tags = ['tracking', 'method order']
+
+    plugins {
+        appMethodPlugin {
+            id = 'com.uniquestudio.method-tracking'
+            displayName = 'Track method order as you like'
+            version = version
+        }
+    }
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.gradle.publish:plugin-publish-plugin:0.9.7"
     }
 }

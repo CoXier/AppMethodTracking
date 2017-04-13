@@ -8,7 +8,7 @@ class Utils {
      * @param s
      * @return List format is  [ext/ent,usecs,packageName,methodSignature]
      */
-    static def parse(String s) {
+    static def parseMethod(String s) {
         def result = []
         int start = 0, end = 0
         for (int i = 0; i < s.length(); i++) {
