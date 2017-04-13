@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else{
             Debug.startMethodTracing(getPackageName());
             wearCloth();
-            wearCloth();
             Debug.stopMethodTracing();
         }
     }
+
 
     public void wearCloth() {
         putOnShoes();
@@ -51,4 +51,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void putOnSocks() {
         // Put on socks
     }
+
 }
