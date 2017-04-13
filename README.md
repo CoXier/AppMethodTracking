@@ -83,23 +83,14 @@ After above steps,`traceName.html` is created.
 
 Its output like this:
 
-* com.hackerli.sample.MainActivity.wearCloth#54
-  + com.hackerli.sample.MainActivity.putOnCoat#6
-  + com.hackerli.sample.MainActivity.putOnPants#3
-  + com.hackerli.sample.MainActivity.putOnShoes#14
-    * com.hackerli.sample.MainActivity.putOnSocks#6
-  + com.hackerli.sample.MainActivity.putOnHat#4
+<img src="/screenshots/s_0.png"/>
 
 The digit is `useces`.
 
 
 In html,I add click event that means you can toggle these elements that have children.For example if I click `com.hackerli.sample.MainActivity.putOnShoes` above line,I will get:
 
-* com.hackerli.sample.MainActivity.wearCloth#54
-  + com.hackerli.sample.MainActivity.putOnCoat#6
-  + com.hackerli.sample.MainActivity.putOnPants#3
-  + com.hackerli.sample.MainActivity.putOnShoes#14
-  + com.hackerli.sample.MainActivity.putOnHat#4
+<img src="/screenshots/s_1.png"/>
 
 
 # LICENSE
