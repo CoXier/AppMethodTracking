@@ -41,15 +41,22 @@ class MethodTrackingTask extends DefaultTask {
 
         // pull trace file from devise
         def adb = platformPath + '/adb'
-        def pullCommand = "${adb} pull /sdcard/${traceName} ${projectDirPath}"
+        def pullCommand = "${adb} pull /sdcard/${traceName} ${projectDirPath}${traceName}"
         println "${pullCommand}"
-        ['bash', '-c', pullCommand].execute().waitFor()
+        String os = System.getProperty("os.name").toLowerCase()
+        if (os.contains("windows"))
+            ("cmd /c start /b ${pullCommand}").execute().waitFor()
+        else
+            ['bash', '-c', pullCommand].execute().waitFor()
 
         // dump trace file
         def dmtracedump = "${platformPath}/dmtracedump"
         def dmCommand = "${dmtracedump}  -o  ${projectDirPath}${traceName}"
         println "${dmCommand}"
-        ['bash', '-c', dmCommand].execute().text
+        if (os.contains("windows"))
+            ("cmd /c start /b ${dmCommand}").execute().text
+        else
+            ['bash', '-c', dmCommand].execute().text
     }
 
     /**
@@ -98,13 +105,13 @@ class MethodTrackingTask extends DefaultTask {
             rootList.add(root)
         }
         println('\n')
-        rootList.each{
-            printMethod(0,it)
+        rootList.each {
+            printMethod(0, it)
         }
 
         // generate html
         def generator = HtmlGenerator.generate
-        generator(projectDirPath+"${traceName}.html",rootList)
+        generator(projectDirPath + "${traceName}.html", rootList)
 
         println '\nFINISHED'
     }
@@ -142,18 +149,18 @@ class MethodTrackingTask extends DefaultTask {
         k
     }
 
-    def printMethod(int i,MethodInfo info){
+    def printMethod(int i, MethodInfo info) {
         def blank = ''
         int j = 0
-        while (j<i){
+        while (j < i) {
             blank = blank + '\t'
             j++
         }
         println("${blank}${info.methodSignature}#${info.usecs}")
         def children = info.children
-        children.eachWithIndex{
-            item,index->
-                printMethod(i+1,item)
+        children.eachWithIndex {
+            item, index ->
+                printMethod(i + 1, item)
         }
     }
 
