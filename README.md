@@ -1,6 +1,8 @@
 # Method Tracking
 A plugin to display how methods are called in application.
 
+[Live Demo](http://coxier.cn/AppMethodTracking.html)
+
 # Usage
 
 ## Stpe1
@@ -14,7 +16,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.uniquestudio:method-tracking:1.0"
+    classpath "gradle.plugin.com.uniquestudio:method-tracking:1.0.5"
   }
 }
 
