@@ -49,6 +49,9 @@ class MethodTrackingTask extends DefaultTask {
         else
             ['bash', '-c', pullCommand].execute().waitFor()
 
+        File file = new File("${projectDirPath}${traceName}")
+        if (!file.exists()) throw new RuntimeException("Trace name may be invalid or devices offline")
+
         // dump trace file
         def dmtracedump = "${platformPath}/dmtracedump"
         def dmCommand = "${dmtracedump}  -o  ${projectDirPath}${traceName}"

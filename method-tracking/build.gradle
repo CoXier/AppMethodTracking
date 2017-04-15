@@ -3,7 +3,7 @@ apply plugin: 'maven'
 apply plugin: 'com.gradle.plugin-publish'
 
 group 'com.uniquestudio'
-version '1.0.5'
+version '1.0.6'
 
 
 repositories {
