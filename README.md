@@ -16,7 +16,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.uniquestudio:method-tracking:1.0.5"
+    classpath "gradle.plugin.com.uniquestudio:method-tracking:1.0.6"
   }
 }
 
