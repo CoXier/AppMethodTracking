@@ -95,6 +95,9 @@ In html,I add click event that means you can toggle these elements that have chi
 <img src="/screenshot/s_1.png"/>
 
 
+# THANKS
+I am inspired by [AppMethodOrder](https://github.com/zjw-swun/AppMethodOrder),espically how to compatible Windows os in groovy script or gradle script.
+
 # LICENSE
 ```
 Copyright 2017 coxier.
