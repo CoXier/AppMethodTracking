@@ -8,7 +8,7 @@ jdk:
   - oraclejdk8
 
 script:
-  - ./.buildscript/test.sh
+  - . /.buildscript/test.sh
 
 
 before_cache:
