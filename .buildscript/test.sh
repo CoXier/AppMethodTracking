@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Start testing"
 
-cd ../method-tracking
+cd method-tracking
 echo "Into method-tracking folder"
 ls
 
