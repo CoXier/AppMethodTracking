@@ -1,4 +1,6 @@
-# Method Tracking![](https://travis-ci.org/CoXier/AppMethodTracking.svg?branch=master)
+# Method Tracking
+
+# ![building](https://travis-ci.org/CoXier/AppMethodTracking.svg?branch=master)
 
 A plugin to display how methods are called in application.
 
@@ -20,7 +22,6 @@ buildscript {
     classpath "gradle.plugin.com.uniquestudio:method-tracking:1.0.6"
   }
 }
-
 ```
 Don't forget :
 
@@ -82,7 +83,7 @@ methodTracking{
 ```groovy
 ./gradlew track
 ```
-After above steps,`traceName.html` is created.
+After above steps,[traceName.html](http://coxier.cn/AppMethodTracking.html) is created.
 
 Its output like this:
 
