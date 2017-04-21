@@ -20,7 +20,7 @@ class MethodTrackingTask extends DefaultTask {
     int start, end
 
     @TaskAction
-    def track() {
+    track() {
         traceInfo = generateTrace()
         println traceInfo
         parseTraceInfo()
@@ -69,6 +69,35 @@ class MethodTrackingTask extends DefaultTask {
      */
     def parseTraceInfo() {
         println '\nSTART PARSING\n'
+
+        filteredMethod = parseMethodInfo(traceInfo)
+        filteredMethod.each { println(it) }
+
+        def rootList = []
+        start = 0
+        end = filteredMethod.size()
+        while (start < end) {
+            MethodInfo root = search()
+            rootList.add(root)
+        }
+        println('\n')
+        rootList.each {
+            printMethod(0, it)
+        }
+
+        // generate html
+        def generator = HtmlGenerator.generate
+        generator(projectDirPath + "${traceName}.html", rootList)
+
+        println '\nFINISHED'
+    }
+
+    /**
+     * extract all methods from traceInfo
+     * @param traceInfo
+     * @return
+     */
+    def parseMethodInfo(traceInfo){
         String[] traceList = traceInfo.split('\n')
         int i
         for (i = 0; i < traceList.length; i++) {
@@ -98,26 +127,10 @@ class MethodTrackingTask extends DefaultTask {
             }
             i++
         }
-        filteredMethod.each { println(it) }
-
-        def rootList = []
-        start = 0
-        end = filteredMethod.size()
-        while (start < end) {
-            MethodInfo root = search()
-            rootList.add(root)
-        }
-        println('\n')
-        rootList.each {
-            printMethod(0, it)
-        }
-
-        // generate html
-        def generator = HtmlGenerator.generate
-        generator(projectDirPath + "${traceName}.html", rootList)
-
-        println '\nFINISHED'
+        println(filteredMethod.class)
+        filteredMethod
     }
+
 
     MethodInfo search() {
         int k = find()
