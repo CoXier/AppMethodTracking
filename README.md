@@ -1,4 +1,5 @@
-# Method Tracking
+# Method Tracking![](https://travis-ci.org/CoXier/AppMethodTracking.svg?branch=master)
+
 A plugin to display how methods are called in application.
 
 [Live Demo](http://coxier.cn/AppMethodTracking.html)
