@@ -4,7 +4,7 @@
 
 A plugin to display how methods are called in application.
 
-[Live Demo](http://coxier.cn/AppMethodTracking.html)
+[Live Demo](http://coxier.github.io/AppMethodTracking.html)
 
 # Usage
 
