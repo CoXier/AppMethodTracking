@@ -83,7 +83,7 @@ methodTracking{
 ```groovy
 ./gradlew track
 ```
-After above steps,[traceName.html](http://coxier.cn/AppMethodTracking.html) is created.
+After above steps,[traceName.html](http://coxier.github.io/AppMethodTracking.html) is created.
 
 Its output like this:
 
